@@ -4,17 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Foundations of Clinical Psychiatry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body class="home-page">
   <div class="app-layout">
     <div id="top"></div>
     <header class="topbar">
       <div class="topbar-inner">
-        <a class="topbar-brand" href="#dashboard" aria-label="Go to dashboard">
-          <span class="topbar-brand-title">Foundations</span>
-          <span class="topbar-brand-subtitle">Clinical Psychiatry</span>
+        <a class="logo" href="index.html" aria-label="Go to home page">
+          <img src="Images/logo.png" alt="Clinical Foundations Logo" />
+          <span class="logo-text">The Clinical Foundations of Psychiatry</span>
         </a>
 
         <nav class="top-nav" aria-label="Primary navigation">
@@ -43,7 +46,7 @@
             </div>
           </div>
 
-          <div class="nav-dropdown align-right">
+          <div class="nav-dropdown">
             <button class="nav-link nav-trigger" type="button">Module 3</button>
             <div class="nav-menu" role="menu">
               <a role="menuitem" href="#module3">SBA Questions</a>
@@ -58,33 +61,36 @@
     <main class="course-main">
 
       <section id="dashboard" class="course-hero">
-        <div>
-          <h1>Foundations of Clinical Psychiatry</h1>
-          <p class="hero-subtitle">A Practical Companion for Medical Students</p>
+        <div class="hero-copy">
+          <h1>Foundations of Clinical<br />Psychiatry</h1>
+          <p class="hero-blurb">Focused teaching for clinical psychiatry.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#modules">Start Modules</a>
+          </div>
         </div>
       </section>
 
       <section id="modules" class="overview-grid">
         <a class="overview-card" href="#module1" aria-label="Go to Module 1: Core Psychiatric Assessment">
-          <span>Module 01</span>
+          <span>Module 1: History</span>
           <h3>Core Psychiatric Assessment</h3>
-          <p>Histories, Examinations and Assessments</p>
+          <p>History taking, red flags and the foundations of safe assessment.</p>
 
           <span class="corner-flap" aria-hidden="true"></span>
         </a>
 
-        <a class="overview-card" href="#module2" aria-label="Go to Module 2: Key Presentations">
-          <span>Module 02</span>
-          <h3>Key Presentations</h3>
-          <p>Depression, Psychosis, Mania, Delirium and Overdose</p>
+        <a class="overview-card" href="#module2" aria-label="Go to Module 2: Key Clinical Presentations">
+          <span>Module 2: Presentations</span>
+          <h3>Key Clinical Presentations</h3>
+          <p>Depression, psychosis, mania, delirium and overdose.</p>
 
           <span class="corner-flap" aria-hidden="true"></span>
         </a>
 
         <a class="overview-card" href="#module3" aria-label="Go to Module 3: Short Based Answer Questions">
-          <span>Module 03</span>
+          <span>Module 3: Practise</span>
           <h3>Short Based Answer Questions</h3>
-          <p>20-mark SBA practice with scoring and explanations.</p>
+          <p>20-mark SBA practice with scoring, explanations and feedback.</p>
 
           <span class="corner-flap" aria-hidden="true"></span>
         </a>

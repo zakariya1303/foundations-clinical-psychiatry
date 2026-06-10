@@ -140,3 +140,52 @@ function initTopNavActive() {
 }
 
 initTopNavActive();
+
+function initHomepageModules() {
+  if (!document.body.classList.contains("home-page")) return;
+
+  const moduleTiles = Array.from(document.querySelectorAll(".home-page .overview-card[href^='#module']"));
+  const moduleSections = Array.from(document.querySelectorAll(".home-page .module-section[id^='module']"));
+
+  if (!moduleTiles.length || !moduleSections.length) return;
+
+  function openModule(moduleId) {
+    const targetSection = document.getElementById(moduleId);
+    if (!targetSection) return;
+
+    moduleSections.forEach((section) => {
+      section.classList.toggle("is-open", section.id === moduleId);
+    });
+
+    moduleTiles.forEach((tile) => {
+      tile.classList.toggle("active", tile.getAttribute("href") === `#${moduleId}`);
+    });
+
+    requestAnimationFrame(() => {
+      targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+
+  function syncFromHash() {
+    const hash = window.location.hash;
+    if (hash && hash.startsWith("#module")) {
+      openModule(hash.slice(1));
+    }
+  }
+
+  moduleTiles.forEach((tile) => {
+    tile.addEventListener("click", (event) => {
+      const href = tile.getAttribute("href");
+      if (!href || !href.startsWith("#module")) return;
+
+      event.preventDefault();
+      openModule(href.slice(1));
+      window.location.hash = href;
+    });
+  });
+
+  window.addEventListener("hashchange", syncFromHash);
+  syncFromHash();
+}
+
+initHomepageModules();
